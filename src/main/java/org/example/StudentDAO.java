@@ -56,4 +56,13 @@ public class StudentDAO {
         ps.setInt(2, id);
         ps.executeUpdate();
     }
+
+    public void topStudents() throws Exception {
+        ResultSet rs = conn.createStatement()
+                .executeQuery("SELECT * FROM students ORDER BY marks DESC LIMIT 3");
+
+        while (rs.next()) {
+            System.out.println(rs.getString("name") + " " + rs.getInt("marks"));
+        }
+    }
 }

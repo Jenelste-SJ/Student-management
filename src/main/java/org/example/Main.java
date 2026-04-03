@@ -8,7 +8,18 @@ public class Main {
         StudentDAO dao = new StudentDAO();
 
         while (true) {
-            System.out.println("1.Add 2.View 3.Delete 4.Search 5.Update 6.Exit");
+            System.out.println("\n====================================");
+            System.out.println("   STUDENT MANAGEMENT SYSTEM");
+            System.out.println("====================================");
+            System.out.println(" 1 -> Add Student");
+            System.out.println(" 2 -> View Students");
+            System.out.println(" 3 -> Delete Student");
+            System.out.println(" 4 -> Search Student");
+            System.out.println(" 5 -> Update Marks");
+            System.out.println(" 6 -> Top Performers");
+            System.out.println(" 7 -> Exit");
+            System.out.println("====================================");
+            System.out.print("Choose option: ");
             int choice = sc.nextInt();
 
             switch (choice) {
@@ -51,6 +62,10 @@ public class Main {
                     break;
 
                 case 6:
+                    dao.topStudents();
+                    break;
+
+                case 7:
                     return;
             }
         }
